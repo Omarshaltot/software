@@ -18,7 +18,7 @@
             <input
               type="text"
               class="form-control"
-              id="floatingInput"
+              id="first-name"
               placeholder="name@example.com"
               required
             />
@@ -28,7 +28,7 @@
             <input
               type="text"
               class="form-control"
-              id="floatingInput"
+              id="last-name"
               placeholder="name@example.com"
               required
             />
@@ -39,7 +39,7 @@
           <input
             type="email"
             class="form-control"
-            id="floatingInput"
+            id="email"
             placeholder="name@example.com"
             required
           />
@@ -49,7 +49,7 @@
           <input
             type="password"
             class="form-control"
-            id="floatingPassword"
+            id="Password"
             placeholder="Password"
             required
           />
@@ -57,6 +57,7 @@
         </div>
 
         <div class="form-floating mt-3">
+          <!-- check password -->
           <input
             type="password"
             class="form-control"
@@ -67,7 +68,9 @@
           <label for="floatingPassword">confirm Password</label>
         </div>
       </div>
-      <button class="btn btn-primary mt-3">sign up</button>
+      <button class="btn btn-primary mt-3" onclick="registerUser()">sign up</button>
     </div>
+
+    <script src="loginData.js"></script>
   </body>
 </html>
