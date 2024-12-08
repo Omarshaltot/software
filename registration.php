@@ -3,30 +3,28 @@
 require('connect.php');
 
 // Variables
-$username = "";
-$password = "";
-
+$Username = "";
+$Password = "";
+$FirstName = "";
+$LastName = "";
 
 // Assigning POST values to variables.
-if (isset($_POST['sign up'])) {
-    if ($_POST['password'] === $_POST['confirm password']) {
-
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if (isset($_POST['sign-up'])) {
+    if ($_POST['password'] === $_POST['confirm-password']) {
         
-
-        $sql = "INSERT INTO User (username, password) VALUES ('$username', '$password')";
-
+        $LastName = $_POST['last-name'];
+        $FirstName = $_POST['first-name'];
+        $Username = $_POST['email'];
+        $Password = $_POST['password'];
+        $sql = "INSERT INTO users (UserID, Username, Password, Role) VALUES (NULL, '$Username', '$Password', 'Parent')";
         // Check
         if (mysqli_query($conn, $sql)) {
-            echo "<br>" . "New record created successfully";
             // Redirect to another page
             header("Location: login.html");
             exit(); // Terminate script after redirection
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-
         mysqli_close($conn);
     } else {
         echo "<script type='text/javascript'>alert('Please enter the right password');</script>";
